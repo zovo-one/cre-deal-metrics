@@ -1,0 +1,411 @@
+{
+  "extName": {
+    "message": "CRE Deal Metrics — Cap rate e prezzo al piede quadrato su LoopNet",
+    "description": "Extension name, <=75 chars"
+  },
+  "extShortName": {
+    "message": "CRE Metrics",
+    "description": "Toolbar short name, <=12 chars"
+  },
+  "extDesc": {
+    "message": "Overlays price/SF, price/unit, cap rate and GRM on LoopNet and Crexi listings, with per-deal notes and a saved-deal tray.",
+    "description": "Extension description, <=132 chars"
+  },
+  "brandName": {
+    "message": "CRE Deal Metrics"
+  },
+  "tierPro": {
+    "message": "PRO"
+  },
+  "tierTrial": {
+    "message": "TRIAL"
+  },
+  "tierFree": {
+    "message": "FREE"
+  },
+  "heroAria": {
+    "message": "Saved deals summary"
+  },
+  "heroDealsSaved": {
+    "message": "deals saved"
+  },
+  "heroSavedOfFree": {
+    "message": "saved of $$1 free"
+  },
+  "heroTrayFull": {
+    "message": "Free tray full — Pro keeps every deal."
+  },
+  "heroUnlimited": {
+    "message": "Unlimited deals with Pro."
+  },
+  "surfaceExport": {
+    "message": "Export CSV"
+  },
+  "surfaceCompare": {
+    "message": "Compare"
+  },
+  "surfaceLockedAria": {
+    "message": "$label$ (Pro feature)",
+    "placeholders": {
+      "label": {
+        "content": "$1"
+      }
+    }
+  },
+  "proTrialActive": {
+    "message": "Pro trial active"
+  },
+  "proActiveThanks": {
+    "message": "Pro active — thank you"
+  },
+  "priceOneTime": {
+    "message": "$$99 one-time"
+  },
+  "upsellLead": {
+    "message": "Unlimited saved deals, CSV export, side-by-side compare and input overrides."
+  },
+  "upgradeCta": {
+    "message": "Upgrade to Pro"
+  },
+  "trialCta": {
+    "message": "Start 7-day free trial — no card"
+  },
+  "licenseReveal": {
+    "message": "Have a license key?"
+  },
+  "licensePlaceholder": {
+    "message": "Paste license key"
+  },
+  "licenseAria": {
+    "message": "License key"
+  },
+  "licenseActivate": {
+    "message": "Activate"
+  },
+  "footerSupport": {
+    "message": "Support"
+  },
+  "footerPrivacy": {
+    "message": "Privacy"
+  },
+  "toastNoDeals": {
+    "message": "No saved deals to export"
+  },
+  "toastCsvDone": {
+    "message": "CSV downloaded"
+  },
+  "toastExportFail": {
+    "message": "Export failed — try again"
+  },
+  "toastNeedTwo": {
+    "message": "Save at least two deals to compare"
+  },
+  "toastDealRemoved": {
+    "message": "Deal removed"
+  },
+  "toastTrialStarted": {
+    "message": "7-day Pro trial started"
+  },
+  "toastTrialUsed": {
+    "message": "Trial already used"
+  },
+  "toastTrialErr": {
+    "message": "Could not start trial"
+  },
+  "toastLicenseShort": {
+    "message": "Enter a valid license key"
+  },
+  "toastProUnlocked": {
+    "message": "Pro unlocked — thank you"
+  },
+  "toastKeyInvalid": {
+    "message": "That key is not valid"
+  },
+  "toastVerifyErr": {
+    "message": "Could not verify — check your connection"
+  },
+  "trayAria": {
+    "message": "Saved deals"
+  },
+  "trayHeading": {
+    "message": "Saved deals ($$1)"
+  },
+  "trayUntitled": {
+    "message": "Untitled listing"
+  },
+  "trayOpenTitle": {
+    "message": "Open $addr$",
+    "placeholders": {
+      "addr": {
+        "content": "$1"
+      }
+    }
+  },
+  "trayOpenAria": {
+    "message": "Open listing: $addr$",
+    "placeholders": {
+      "addr": {
+        "content": "$1"
+      }
+    }
+  },
+  "trayOpenNewTab": {
+    "message": "Open $addr$ in a new tab",
+    "placeholders": {
+      "addr": {
+        "content": "$1"
+      }
+    }
+  },
+  "trayRemoveAria": {
+    "message": "Remove $addr$ from tray",
+    "placeholders": {
+      "addr": {
+        "content": "$1"
+      }
+    }
+  },
+  "pillCap": {
+    "message": "Cap"
+  },
+  "pillPerSF": {
+    "message": "$/SF"
+  },
+  "emptyTitle": {
+    "message": "No deals saved yet"
+  },
+  "emptyBody": {
+    "message": "Open a LoopNet or Crexi listing — the metrics overlay appears in the corner. Hit Save to pin a deal here."
+  },
+  "settingsHeading": {
+    "message": "Settings"
+  },
+  "optSubtitle": {
+    "message": "Tune the overlay and manage your plan."
+  },
+  "optProTitle": {
+    "message": "Unlock Pro — pay once, yours forever"
+  },
+  "setMasterLabel": {
+    "message": "Show metrics overlay"
+  },
+  "setMasterHint": {
+    "message": "Master switch for both sites"
+  },
+  "setRunOn": {
+    "message": "Run on"
+  },
+  "setShowChips": {
+    "message": "Show chips"
+  },
+  "setCornerLabel": {
+    "message": "Overlay corner"
+  },
+  "cornerTL": {
+    "message": "Top left"
+  },
+  "cornerTR": {
+    "message": "Top right"
+  },
+  "cornerBL": {
+    "message": "Bottom left"
+  },
+  "cornerBR": {
+    "message": "Bottom right"
+  },
+  "siteLoopNet": {
+    "message": "LoopNet"
+  },
+  "siteCrexi": {
+    "message": "Crexi"
+  },
+  "chipPricePerSF": {
+    "message": "Price / SF"
+  },
+  "chipPricePerUnit": {
+    "message": "Price / Unit"
+  },
+  "chipCapRate": {
+    "message": "Cap Rate"
+  },
+  "chipGrm": {
+    "message": "GRM"
+  },
+  "pwCapTitle": {
+    "message": "Your tray is full"
+  },
+  "pwCapBody": {
+    "message": "You've saved 5 deals — the free limit. Pro keeps every deal you find, and your first five stay right where they are."
+  },
+  "pwExportTitle": {
+    "message": "Export is a Pro feature"
+  },
+  "pwExportBody": {
+    "message": "Download your whole saved-deal tray to CSV — cap, price/SF, price/unit, GRM and notes — ready for your underwriting spreadsheet."
+  },
+  "pwCompareTitle": {
+    "message": "Compare is a Pro feature"
+  },
+  "pwCompareBody": {
+    "message": "Line your saved deals up side by side and read the four metrics across every one at a glance."
+  },
+  "pwOverrideTitle": {
+    "message": "Overrides are a Pro feature"
+  },
+  "pwOverrideBody": {
+    "message": "Type your own NOI, vacancy-adjusted gross or price to recompute cap and GRM against your underwriting — not just the listing's."
+  },
+  "pwFine": {
+    "message": "One-time $$99. No subscription. 7-day money-back."
+  },
+  "pwUnlocksLabel": {
+    "message": "Everything Pro unlocks"
+  },
+  "pwFeatDeals": {
+    "message": "Unlimited saved deals (free stops at 5)"
+  },
+  "pwFeatOverride": {
+    "message": "Override any figure — recompute cap & GRM on your own NOI"
+  },
+  "pwFeatExport": {
+    "message": "CSV export of your entire saved-deal tray"
+  },
+  "pwFeatCompare": {
+    "message": "Side-by-side compare across every saved deal"
+  },
+  "pwCompareLine": {
+    "message": "Free: 5 deals, fill blanks only. Pro: unlimited, override, export, compare."
+  },
+  "pwPriceUnit": {
+    "message": "lifetime · one payment, not a subscription"
+  },
+  "pwGuarantee2": {
+    "message": "7-day money-back guarantee. One payment unlocks this extension's Pro forever."
+  },
+  "pwUpgradeCta": {
+    "message": "Upgrade to Pro — $$99 one-time"
+  },
+  "pwMaybeLater": {
+    "message": "Maybe later"
+  },
+  "compareAria": {
+    "message": "Compare saved deals"
+  },
+  "compareHeading": {
+    "message": "Compare ($$1)"
+  },
+  "compareClose": {
+    "message": "Close compare view"
+  },
+  "compareCloseTitle": {
+    "message": "Close"
+  },
+  "compareUntitled": {
+    "message": "Untitled"
+  },
+  "cmpCapRate": {
+    "message": "Cap rate"
+  },
+  "cmpPricePerSF": {
+    "message": "Price / SF"
+  },
+  "cmpPricePerUnit": {
+    "message": "Price / Unit"
+  },
+  "cmpGrm": {
+    "message": "GRM"
+  },
+  "ovlPanelAria": {
+    "message": "CRE deal metrics"
+  },
+  "ovlTitle": {
+    "message": "Deal Metrics"
+  },
+  "ovlCollapse": {
+    "message": "Collapse panel"
+  },
+  "ovlExpand": {
+    "message": "Expand panel"
+  },
+  "ovlHide": {
+    "message": "Hide panel"
+  },
+  "ovlParseFail": {
+    "message": "Couldn't read this listing's financials — enter them below."
+  },
+  "ovlListed": {
+    "message": "Listed $rate$",
+    "placeholders": {
+      "rate": {
+        "content": "$1"
+      }
+    }
+  },
+  "fieldAskPrice": {
+    "message": "Asking price"
+  },
+  "fieldBuildingSF": {
+    "message": "Building SF"
+  },
+  "fieldUnitCount": {
+    "message": "Units"
+  },
+  "fieldNoi": {
+    "message": "NOI (annual $)"
+  },
+  "fieldGrossIncome": {
+    "message": "Gross income (annual $)"
+  },
+  "ovlNotesLabel": {
+    "message": "Notes"
+  },
+  "ovlNotesPh": {
+    "message": "Private notes for this deal…"
+  },
+  "ovlProLock": {
+    "message": "Pro"
+  },
+  "ovlProLockAria": {
+    "message": "Overriding a page figure is a Pro feature"
+  },
+  "ovlSaveDeal": {
+    "message": "Save deal"
+  },
+  "ovlSaved": {
+    "message": "✓ Saved"
+  },
+  "ovlPaywallText": {
+    "message": "5 deals saved. Pro keeps every deal."
+  },
+  "ovlGetPro": {
+    "message": "Get Pro"
+  },
+  "ovlMaybeLater": {
+    "message": "Maybe later"
+  },
+  "announcePerSF": {
+    "message": "Price per SF $val$",
+    "placeholders": {
+      "val": {
+        "content": "$1"
+      }
+    }
+  },
+  "announceCap": {
+    "message": "Cap rate $val$",
+    "placeholders": {
+      "val": {
+        "content": "$1"
+      }
+    }
+  },
+  "announceNoFin": {
+    "message": "No financials found"
+  },
+  "toastSavedTray": {
+    "message": "Saved to tray"
+  },
+  "toastSaveFail": {
+    "message": "Could not save — try again"
+  }
+}

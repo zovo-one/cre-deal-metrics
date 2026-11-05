@@ -1,0 +1,72 @@
+/* ============================================================================
+ * options.css — SURFACE-owned. Full-tab options page shell.
+ * ----------------------------------------------------------------------------
+ * Loads AFTER cred5621-base.css + popup.css (reuses .set-card / .switch / .cred5621-*),
+ * so every value is a brand token. One page shell, the Get-Pro upsell, and the
+ * two-column rail that folds to one on narrow. Real light + dark via tokens.
+ * The Zovo sidebar's accent is pinned to the exact brand purple (#a6e75c) — the
+ * canonical --cred5621-accent token is teal, so we override it locally on the rail.
+ * ========================================================================== */
+
+.opt-body {
+  background: var(--cred5621-surface);
+  color: var(--cred5621-text);
+  min-height: 100vh;
+  font-family: var(--cred5621-font, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
+/* Pin the conversion sidebar to the exact brand purple accent (#a6e75c). */
+.cred5621-sidebar { --cred5621-accent: #a6e75c; }
+
+.opt-shell {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cred5621-space-7);
+  max-width: 940px;
+  margin: 0 auto;
+  padding: var(--cred5621-space-8) var(--cred5621-space-6);
+}
+@media (max-width: 760px) {
+  .opt-shell { flex-direction: column; gap: var(--cred5621-space-6); padding: var(--cred5621-space-6) var(--cred5621-space-5); }
+  .cred5621-sidebar { width: 100%; }
+}
+
+.opt-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--cred5621-space-5); }
+
+/* ---- Header --------------------------------------------------------------- */
+.opt-head {
+  display: flex; align-items: center; gap: var(--cred5621-space-3);
+}
+.opt-head .brand-mark { width: 40px; height: 40px; border-radius: var(--cred5621-radius-card); }
+.opt-head__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.opt-head__title { margin: 0; font-size: var(--cred5621-fs-title); font-weight: 700; letter-spacing: -0.02em; }
+.opt-head__sub { margin: 0; font-size: var(--cred5621-fs-body); }
+.opt-head__badge { flex: 0 0 auto; }
+
+/* ---- Get-Pro upsell (the ONE gold surface on this page) ------------------- */
+.opt-upsell {
+  display: flex; flex-direction: column; gap: var(--cred5621-space-3);
+  padding: var(--cred5621-space-6);
+}
+.opt-upsell__head { display: flex; align-items: center; justify-content: space-between; }
+.opt-upsell__price { font-weight: var(--cred5621-fw-heading); color: var(--cred5621-text); }
+.opt-upsell__title { margin: 0; font-size: var(--cred5621-fs-subheading); font-weight: 700; letter-spacing: -0.01em; }
+.opt-upsell__lead { margin: 0; font-size: var(--cred5621-fs-body); }
+.opt-upsell__fine { margin: 2px 0 0; font-size: 11px; }
+
+.opt-pro-list { list-style: none; margin: 2px 0 var(--cred5621-space-2); padding: 0; display: flex; flex-direction: column; gap: var(--cred5621-space-2); }
+.opt-pro-list__item { display: flex; align-items: flex-start; gap: var(--cred5621-space-2); font-size: var(--cred5621-fs-body); line-height: 1.4; }
+.opt-pro-list__ic { flex: 0 0 auto; display: inline-flex; margin-top: 2px; color: var(--cred5621-success); }
+
+/* ---- Pro-active state ----------------------------------------------------- */
+.opt-pro-active {
+  display: flex; align-items: center; gap: var(--cred5621-space-2);
+  padding: var(--cred5621-space-4) var(--cred5621-space-5);
+  color: var(--cred5621-success); font-weight: var(--cred5621-fw-medium);
+  background: color-mix(in srgb, var(--cred5621-success) 10%, var(--cred5621-bg));
+  border-color: color-mix(in srgb, var(--cred5621-success) 24%, transparent);
+}
+
+/* The reused .pop-section adds side padding meant for the 360px popup; on the
+   wider options main column let the settings card sit flush with the column. */
+.opt-main .pop-section { padding-left: 0; padding-right: 0; }

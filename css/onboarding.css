@@ -1,0 +1,136 @@
+/* ============================================================================
+ * onboarding.css — SURFACE-owned. First-run welcome page.
+ * ----------------------------------------------------------------------------
+ * Loads AFTER cred5621-base.css; every color is a brand token so light + dark come
+ * for free. Full-page centered shell (this renders in a real tab, not the popup
+ * width). The demo stage overlaps a mock listing card with the metrics overlay
+ * that animates into the corner — the same payoff a real listing gives.
+ * ========================================================================== */
+
+.ob-body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(1100px 460px at 50% -8%, var(--cred5621-primary-50), transparent 70%),
+    var(--cred5621-surface);
+  color: var(--cred5621-text);
+}
+
+.ob-shell {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--cred5621-space-8) var(--cred5621-space-5) var(--cred5621-space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cred5621-space-6);
+}
+
+/* ---- Brand ---------------------------------------------------------------- */
+.ob-brand { display: flex; align-items: center; gap: var(--cred5621-space-3); }
+.ob-brand__name { flex: 1; font-size: var(--cred5621-fs-subheading); font-weight: var(--cred5621-fw-heading); letter-spacing: -0.01em; }
+.brand-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; flex: 0 0 auto; color: #fff;
+  border-radius: var(--cred5621-radius-input);
+  background: linear-gradient(135deg, var(--cred5621-primary), var(--cred5621-accent));
+}
+
+/* ---- Hero ----------------------------------------------------------------- */
+.ob-hero { text-align: center; }
+.ob-hero__title {
+  margin: 0 0 var(--cred5621-space-3); font-size: var(--cred5621-fs-title);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
+}
+.ob-hero__sub { margin: 0 auto; max-width: 52ch; font-size: var(--cred5621-fs-subheading); line-height: 1.55; }
+
+/* ---- Demo stage ----------------------------------------------------------- */
+.demo-stage {
+  position: relative;
+  padding: var(--cred5621-space-5) var(--cred5621-space-5) var(--cred5621-space-7);
+}
+.mock {
+  max-width: 460px; margin: 0 auto;
+  background: var(--cred5621-bg); border: 1px solid var(--cred5621-border);
+  border-radius: var(--cred5621-radius-card); overflow: hidden; box-shadow: var(--cred5621-shadow);
+}
+.mock__photo {
+  position: relative; height: 148px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cred5621-primary) 30%, var(--cred5621-surface-2)),
+                    color-mix(in srgb, var(--cred5621-accent) 24%, var(--cred5621-surface-2)));
+}
+.mock__badge {
+  position: absolute; top: 12px; left: 12px;
+  padding: 4px 10px; border-radius: var(--cred5621-radius-pill);
+  font-size: 11px; font-weight: var(--cred5621-fw-heading); letter-spacing: 0.02em;
+  color: var(--cred5621-text); background: color-mix(in srgb, var(--cred5621-bg) 84%, transparent);
+  backdrop-filter: blur(4px);
+}
+.mock__body { padding: var(--cred5621-space-5); }
+.mock__price { font-size: var(--cred5621-fs-title); font-weight: 700; letter-spacing: -0.02em; }
+.mock__addr { margin-top: 2px; font-weight: var(--cred5621-fw-medium); }
+.mock__city { font-size: var(--cred5621-fs-body); }
+.mock__specs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--cred5621-space-3);
+  margin: var(--cred5621-space-4) 0 0; padding-top: var(--cred5621-space-4);
+  border-top: 1px solid var(--cred5621-border);
+}
+.mock__spec dt { font-size: var(--cred5621-fs-caption); }
+.mock__spec dd { margin: 2px 0 0; font-weight: var(--cred5621-fw-heading); font-variant-numeric: tabular-nums; }
+
+/* ---- The metrics overlay (animates in) ------------------------------------ */
+.demo-overlay {
+  position: absolute; right: max(12px, 8%); bottom: 12px; width: 208px;
+  background: var(--cred5621-bg); border: 1px solid var(--cred5621-border);
+  border-radius: var(--cred5621-radius-card); box-shadow: var(--cred5621-shadow-lg);
+  padding: var(--cred5621-space-3);
+  opacity: 0; transform: translateY(12px) scale(0.98);
+  transition: opacity 240ms ease-out, transform 240ms ease-out;
+}
+.demo-overlay--in { opacity: 1; transform: translateY(0) scale(1); }
+.demo-overlay__head { display: flex; align-items: center; gap: 6px; padding: 2px 2px var(--cred5621-space-2); }
+.demo-overlay__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cred5621-accent); }
+.demo-overlay__title { font-size: var(--cred5621-fs-caption); font-weight: var(--cred5621-fw-heading); letter-spacing: 0.02em; }
+.demo-overlay__chips { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.demo-chip {
+  display: flex; flex-direction: column; gap: 1px;
+  padding: 8px 9px; border-radius: var(--cred5621-radius-btn);
+  background: var(--cred5621-surface); border: 1px solid var(--cred5621-border);
+  opacity: 0; transform: translateY(6px); transition: opacity 180ms ease-out, transform 180ms ease-out;
+}
+.demo-chip--in { opacity: 1; transform: translateY(0); }
+.demo-chip__label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cred5621-text-secondary); }
+.demo-chip__value { font-family: var(--cred5621-font-mono); font-size: var(--cred5621-fs-subheading); font-weight: var(--cred5621-fw-heading); color: var(--cred5621-primary); }
+
+/* ---- Steps ---------------------------------------------------------------- */
+.ob-steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cred5621-space-4);
+}
+.ob-step {
+  display: flex; gap: var(--cred5621-space-3);
+  padding: var(--cred5621-space-4); background: var(--cred5621-bg);
+  border: 1px solid var(--cred5621-border); border-radius: var(--cred5621-radius-card);
+}
+.ob-step__n {
+  flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: var(--cred5621-fs-caption); font-weight: 700;
+  color: #fff; background: var(--cred5621-primary);
+}
+.ob-step__t { margin: 0 0 2px; font-weight: var(--cred5621-fw-heading); }
+.ob-step__b { margin: 0; font-size: var(--cred5621-fs-caption); line-height: 1.5; }
+
+/* ---- CTA + footer --------------------------------------------------------- */
+.ob-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--cred5621-space-3); }
+.ob-foot { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0; font-size: var(--cred5621-fs-caption); }
+.ob-foot svg { flex: 0 0 auto; color: var(--cred5621-success); }
+
+@media (max-width: 560px) {
+  .ob-steps { grid-template-columns: 1fr; }
+  .demo-overlay { position: static; width: auto; margin: var(--cred5621-space-4) auto 0; max-width: 460px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-overlay, .demo-chip { transition: none; opacity: 1; transform: none; }
+}

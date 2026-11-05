@@ -1,0 +1,249 @@
+/* ============================================================================
+ * popup.css — SURFACE-owned. CRE Deal Metrics toolbar popup.
+ * ----------------------------------------------------------------------------
+ * Loads AFTER cred5621-base.css so every value here is a brand token — nothing is
+ * hardcoded that the design system already owns. Light + dark both derive from
+ * the same custom properties (cred5621-base flips them), so there is one source of
+ * truth and real dark mode with zero duplicated color literals.
+ * ========================================================================== */
+
+body.cred5621-popup {
+  width: var(--cred5621-popup-w);
+  max-height: var(--cred5621-popup-maxh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--cred5621-surface);
+}
+
+#cred5621-root { display: block; }
+
+/* ---- Header brand mark ---------------------------------------------------- */
+.brand-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; flex: 0 0 auto;
+  color: #fff; border-radius: var(--cred5621-radius-input);
+  background: linear-gradient(135deg, var(--cred5621-primary), var(--cred5621-accent));
+}
+.cred5621-header { background: var(--cred5621-bg); }
+
+/* ---- Hero ----------------------------------------------------------------- */
+.pop-hero { padding: var(--cred5621-space-6) var(--cred5621-space-5) var(--cred5621-space-5); background: var(--cred5621-bg); }
+.pop-hero .cred5621-progress { max-width: 220px; margin: var(--cred5621-space-4) auto 0; }
+.pop-hero__alert { max-width: 300px; margin: var(--cred5621-space-4) auto 0; justify-content: center; }
+.pop-hero__alert svg { flex: 0 0 auto; }
+
+/* ---- Sections ------------------------------------------------------------- */
+.pop-section { padding: var(--cred5621-space-5) var(--cred5621-space-5) 0; }
+.pop-section:last-of-type { padding-bottom: var(--cred5621-space-5); }
+
+/* ---- Pro surfaces (Export · Compare) -------------------------------------- */
+.pro-surfaces {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--cred5621-space-3);
+  padding: var(--cred5621-space-5) var(--cred5621-space-5) 0;
+}
+.surface-btn { position: relative; }
+.surface-btn--locked {
+  color: var(--cred5621-pro-dark);
+  border-color: color-mix(in srgb, var(--cred5621-pro) 40%, var(--cred5621-border));
+  background: color-mix(in srgb, var(--cred5621-pro) 8%, var(--cred5621-bg));
+}
+.surface-btn--locked:hover:not([disabled]) { background: color-mix(in srgb, var(--cred5621-pro) 14%, var(--cred5621-bg)); }
+.surface-btn__lock { display: inline-flex; margin-left: 2px; color: var(--cred5621-pro); }
+
+/* ---- Deal list ------------------------------------------------------------ */
+.deal-list { list-style: none; margin: var(--cred5621-space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--cred5621-space-2); }
+.deal-row {
+  display: flex; align-items: stretch; gap: var(--cred5621-space-2);
+  background: var(--cred5621-bg); border: 1px solid var(--cred5621-border);
+  border-radius: var(--cred5621-radius-card); overflow: hidden;
+  transition: border-color var(--cred5621-transition), box-shadow var(--cred5621-transition);
+}
+.deal-row:hover { border-color: var(--cred5621-primary-light); box-shadow: var(--cred5621-shadow-sm); }
+.deal-row__main {
+  flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px;
+  padding: var(--cred5621-space-3); text-align: left; cursor: pointer;
+  background: transparent; border: 0; font: inherit; color: inherit;
+}
+.deal-row__main:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--cred5621-primary); border-radius: var(--cred5621-radius-card); }
+.deal-row__addr {
+  font-weight: var(--cred5621-fw-heading); font-size: var(--cred5621-fs-body);
+  letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.deal-row__meta { display: flex; align-items: center; gap: var(--cred5621-space-2); flex-wrap: wrap; }
+.deal-row__site {
+  font-size: 10px; font-weight: var(--cred5621-fw-heading); letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--cred5621-text-secondary);
+}
+.deal-pill {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  padding: 2px 8px; border-radius: var(--cred5621-radius-pill);
+  background: var(--cred5621-surface-2); font-family: var(--cred5621-font-mono); font-size: 11px;
+}
+.deal-pill__k { color: var(--cred5621-text-secondary); }
+.deal-pill__v { color: var(--cred5621-text); font-weight: var(--cred5621-fw-medium); }
+.deal-row__note {
+  font-size: var(--cred5621-fs-caption); color: var(--cred5621-text-secondary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-style: italic;
+}
+.deal-row__time { font-size: 11px; }
+.deal-row__actions { display: flex; flex-direction: column; border-left: 1px solid var(--cred5621-border); }
+.deal-row__actions .icon-btn { flex: 1; border-radius: 0; }
+.deal-row__actions .icon-btn + .icon-btn { border-top: 1px solid var(--cred5621-border); }
+.deal-row__del:hover { color: var(--cred5621-error); background: color-mix(in srgb, var(--cred5621-error) 10%, transparent); }
+
+/* ---- Icon button ---------------------------------------------------------- */
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; min-width: 36px; padding: 0; color: var(--cred5621-text-secondary);
+  background: transparent; border: 0; cursor: pointer;
+  transition: background var(--cred5621-transition), color var(--cred5621-transition);
+}
+.icon-btn:hover { background: var(--cred5621-surface-2); color: var(--cred5621-text); }
+.icon-btn:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--cred5621-primary); }
+
+/* ---- Empty state ---------------------------------------------------------- */
+.cred5621-empty { padding: var(--cred5621-space-6) var(--cred5621-space-5); }
+.empty-art {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 72px; height: 72px; margin: 0 auto var(--cred5621-space-3);
+  color: var(--cred5621-primary); border-radius: var(--cred5621-radius-pill);
+  background: var(--cred5621-primary-50);
+}
+
+/* ---- Settings ------------------------------------------------------------- */
+.set-card { padding: var(--cred5621-space-2) var(--cred5621-space-4); margin-top: var(--cred5621-space-2); }
+.set-row {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--cred5621-space-3);
+  min-height: 44px; padding: var(--cred5621-space-2) 0;
+}
+.set-row + .set-row { border-top: 1px solid var(--cred5621-border); }
+.set-row__text { display: flex; flex-direction: column; gap: 1px; }
+.set-row__label { font-weight: var(--cred5621-fw-medium); }
+.set-row__hint { font-size: var(--cred5621-fs-caption); }
+.set-group {
+  margin: var(--cred5621-space-3) 0 2px; font-size: 11px; font-weight: var(--cred5621-fw-heading);
+  letter-spacing: 0.07em; text-transform: uppercase; color: var(--cred5621-text-secondary);
+}
+.set-deps { transition: opacity var(--cred5621-transition); }
+.set-deps--off { opacity: 0.45; }
+.set-row--select { border-top: 1px solid var(--cred5621-border); }
+.set-select { width: auto; min-width: 128px; }
+
+/* Toggle switch (native checkbox, styled track) */
+.switch { position: relative; display: inline-flex; flex: 0 0 auto; width: 40px; height: 24px; }
+.switch__input {
+  position: absolute; inset: 0; margin: 0; width: 100%; height: 100%;
+  opacity: 0; cursor: pointer; z-index: 1;
+}
+.switch__track {
+  position: absolute; inset: 0; border-radius: var(--cred5621-radius-pill);
+  background: var(--cred5621-surface-2); border: 1px solid var(--cred5621-border);
+  transition: background var(--cred5621-transition), border-color var(--cred5621-transition);
+}
+.switch__track::after {
+  content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px;
+  border-radius: 50%; background: var(--cred5621-bg); box-shadow: var(--cred5621-shadow-sm);
+  transition: transform var(--cred5621-transition);
+}
+.switch__input:checked + .switch__track { background: var(--cred5621-primary); border-color: var(--cred5621-primary); }
+.switch__input:checked + .switch__track::after { transform: translateX(16px); background: #fff; }
+.switch__input:focus-visible + .switch__track { box-shadow: 0 0 0 3px var(--cred5621-primary-50); }
+
+/* ---- Upsell --------------------------------------------------------------- */
+.upsell { margin: var(--cred5621-space-5) var(--cred5621-space-5) 0; display: flex; flex-direction: column; gap: var(--cred5621-space-3); }
+.upsell__head { display: flex; align-items: center; justify-content: space-between; }
+.upsell__price { font-weight: var(--cred5621-fw-heading); color: var(--cred5621-text); }
+.upsell__lead { margin: 0; color: var(--cred5621-text-secondary); font-size: var(--cred5621-fs-body); }
+.pro-active {
+  display: flex; align-items: center; gap: var(--cred5621-space-2);
+  padding: 10px 12px; border-radius: var(--cred5621-radius-btn);
+  color: var(--cred5621-success); font-weight: var(--cred5621-fw-medium);
+  background: color-mix(in srgb, var(--cred5621-success) 10%, var(--cred5621-bg));
+  border: 1px solid color-mix(in srgb, var(--cred5621-success) 24%, transparent);
+}
+
+/* ---- License reveal ------------------------------------------------------- */
+.license { margin-top: 2px; }
+.license__summary {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  list-style: none; font-size: var(--cred5621-fs-caption); color: var(--cred5621-primary);
+  font-weight: var(--cred5621-fw-medium); padding: var(--cred5621-space-1) 0;
+}
+.license__summary::-webkit-details-marker { display: none; }
+.license__summary:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--cred5621-primary); border-radius: var(--cred5621-radius-btn); }
+.license__row { display: flex; gap: var(--cred5621-space-2); margin-top: var(--cred5621-space-2); }
+.license__row .cred5621-input { flex: 1; min-width: 0; }
+.license__row .cred5621-btn { flex: 0 0 auto; }
+
+/* ---- Footer --------------------------------------------------------------- */
+.cred5621-footer { background: var(--cred5621-bg); margin-top: var(--cred5621-space-5); }
+.footer-links { display: inline-flex; align-items: center; gap: var(--cred5621-space-2); }
+.footer-dot { color: var(--cred5621-text-secondary); }
+
+/* ---- Compare -------------------------------------------------------------- */
+.compare-mount:empty { display: none; }
+.compare { padding: var(--cred5621-space-5) var(--cred5621-space-5) 0; }
+.compare__head { display: flex; align-items: center; justify-content: space-between; }
+.compare__scroll { overflow-x: auto; border: 1px solid var(--cred5621-border); border-radius: var(--cred5621-radius-card); background: var(--cred5621-bg); margin-top: var(--cred5621-space-2); }
+.compare__table { border-collapse: collapse; width: max-content; min-width: 100%; font-size: var(--cred5621-fs-caption); }
+.compare__table th, .compare__table td { padding: 8px 10px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--cred5621-border); }
+.compare__corner { background: var(--cred5621-surface); position: sticky; left: 0; }
+.compare__deal { max-width: 130px; }
+.compare__deal-name { display: block; overflow: hidden; text-overflow: ellipsis; max-width: 120px; font-weight: var(--cred5621-fw-heading); }
+.compare__rowlabel { position: sticky; left: 0; background: var(--cred5621-surface); color: var(--cred5621-text-secondary); font-weight: var(--cred5621-fw-medium); }
+.compare__val { font-family: var(--cred5621-font-mono); color: var(--cred5621-text); }
+.compare__table tr:last-child th, .compare__table tr:last-child td { border-bottom: 0; }
+
+/* ---- Toast ---------------------------------------------------------------- */
+.toast {
+  position: fixed; left: 50%; bottom: 14px; transform: translate(-50%, 8px);
+  max-width: calc(100% - 32px);
+  padding: 9px 16px; border-radius: var(--cred5621-radius-pill);
+  background: var(--cred5621-text); color: var(--cred5621-bg);
+  font-size: var(--cred5621-fs-caption); font-weight: var(--cred5621-fw-medium);
+  box-shadow: var(--cred5621-shadow-lg);
+  opacity: 0; pointer-events: none; z-index: 60;
+  transition: opacity var(--cred5621-transition), transform var(--cred5621-transition);
+}
+.toast--on { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---- Paywall modal -------------------------------------------------------- */
+.pw-host[hidden] { display: none; }
+.pw-backdrop {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; align-items: center; justify-content: center; padding: var(--cred5621-space-5);
+  background: color-mix(in srgb, #12160b 62%, transparent);
+  animation: pw-fade var(--cred5621-transition);
+}
+.pw-dialog { width: 100%; max-width: 316px; text-align: center; padding: var(--cred5621-space-6); }
+.pw-badge { margin-bottom: var(--cred5621-space-3); }
+.pw-title { margin: 0 0 var(--cred5621-space-2); font-size: var(--cred5621-fs-heading); font-weight: 700; letter-spacing: -0.01em; }
+.pw-body { margin: 0 0 var(--cred5621-space-5); font-size: var(--cred5621-fs-body); }
+.pw-actions { display: flex; flex-direction: column; gap: var(--cred5621-space-2); }
+.pw-fine { margin: var(--cred5621-space-4) 0 0; font-size: 11px; }
+@keyframes pw-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---- Paywall value-stack (sells the price) -------------------------------- */
+.pw-stack {
+  text-align: left; margin: 0 0 var(--cred5621-space-4);
+  padding: var(--cred5621-space-4); border-radius: var(--cred5621-radius-card);
+  background: var(--cred5621-surface); border: 1px solid var(--cred5621-border);
+}
+.pw-stack__label { margin: 0 0 var(--cred5621-space-2); }
+.pw-stack__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--cred5621-space-2); }
+.pw-stack__item { display: flex; align-items: flex-start; gap: var(--cred5621-space-2); font-size: var(--cred5621-fs-caption); line-height: 1.4; }
+.pw-stack__ic { flex: 0 0 auto; display: inline-flex; margin-top: 1px; color: var(--cred5621-success); }
+.pw-compare { margin: var(--cred5621-space-3) 0 0; font-size: 11px; line-height: 1.45; }
+
+/* ---- Paywall price line ---------------------------------------------------- */
+.pw-price {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  margin: 0 0 var(--cred5621-space-4);
+}
+.pw-price__amt { font-size: var(--cred5621-fs-heading); font-weight: 700; letter-spacing: -0.02em; color: var(--cred5621-text); }
+.pw-price__unit { font-size: 11px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .toast, .pw-backdrop, .switch__track, .switch__track::after,
+  .deal-row, .surface-btn { transition: none; animation: none; }
+}
